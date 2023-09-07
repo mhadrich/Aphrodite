@@ -10,3 +10,11 @@ export const POST = async (req) => {
         return NextResponse.json({ message: "Error creating product", err }, { status: 500 });
     }
 }
+export const GET = async (req) => {
+    try {
+        const products = await prisma.product.findMany();
+        return NextResponse.json(products);
+    } catch (err) {
+        return NextResponse.json({ message: "Error fetching products", error: err.message }, { status: 500 });
+    }
+}
