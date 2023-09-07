@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <main className="w-screen h-96 pt-0 pb-5 bg-black text-white flex-col justify-end items-center  inline-flex">
+    <main className="mt-40 w-screen h-96 pt-0 pb-5 bg-black text-white flex-col justify-end items-center  inline-flex">
       <div>
         <div className="gap-20  leading-10 flex justify-between">
           {/* EXCLUSIVE */}
           <div>
             <h4 className="font-bold text-2xl">Exclusive</h4>
-            <Link href='youtube.com'>
+            <Link href='https://www.youtube.com' target="_blank">
             <h3 className="text-xl">Subscribe</h3>
             </Link>
             <p className="">Get 10% off your first order</p>
@@ -92,7 +92,7 @@ export default function Footer() {
               </div>
               <div className="flex-col justify-start items-start gap-1 inline-flex">
                 <div className="w-28 h-10 relative bg-black">
-                  <Link href='store.google.com'>
+                  <Link href='https://play.google.com/store/apps?hl=en&gl=US' target="_blank">
                   <img
                     className="w-27 h-10 left-[3px] top-[5px] absolute "
                     src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
@@ -100,7 +100,7 @@ export default function Footer() {
                   </Link>
                 </div>
                 <div className="w-28 h-10 p-0.5 bg-black justify-center items-center inline-flex">
-                  <Link href='https://www.apple.com/app-store/'>
+                  <Link href='https://www.apple.com/app-store/' target="_blank">
                   <img
                     className="w-24 h-10 rounded"
                     src="https://developer.apple.com/assets/elements/icons/download-on-the-app-store/download-on-the-app-store.svg"
@@ -111,25 +111,25 @@ export default function Footer() {
             </div>
             <div>
               <div className="w-50 h-6 justify-start items-start gap-6 inline-flex">
-                <Link href="facebook.com">
+              <Link href="https://www.facebook.com" target="_blank">
                   <img
                     className="w-6 h-6"
                     src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-1024.png"
                   />
                 </Link>
-                <Link href="instagram.com">
+                <Link href="https://www.instagram.com" target="_blank">
                   <img
                     className="w-6 h-6 relative"
                     src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png"
                   />
                 </Link>
-                <Link href="twitter.com">
+                <Link href="https://www.twitter.com" target="_blank">
                   <img
                     className="w-6 h-6 relative"
                     src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-1024.png"
                   />
                 </Link>
-                <Link href="linkedin.com">
+                <Link href="https://www.linkedin.com" target="_blank">
                   <img
                     className="w-6 h-6 relative"
                     src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-1024.png"
