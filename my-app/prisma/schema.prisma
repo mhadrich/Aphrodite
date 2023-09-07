@@ -29,7 +29,7 @@ model Product {
   favUsers    FavouriteItem[]
 }
 
-// Pivot table for cart
+
 model CartItem {
   id        Int     @id @default(autoincrement())
   userId    Int
@@ -39,7 +39,7 @@ model CartItem {
   @@unique([userId, productId])
 }
 
-// Pivot table for favourites
+
 model FavouriteItem {
   id        Int     @id @default(autoincrement())
   userId    Int
