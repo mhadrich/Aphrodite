@@ -13,9 +13,9 @@ export const POST = async (req) => {
 
 export const GET = async (req) => {
     try {
-        const users = await prisma.user.findMany();
-        return NextResponse.json(users);
+        const User = await prisma.User.findMany();
+        return NextResponse.json(User);
     } catch (err) {
-        return NextResponse.json({message:"Error fetchin users", error:err.message},{status:500}) 
+        return NextResponse.json({ message: "Error fetching users", error: err.message }, { status: 500 });
     }
-};
+}

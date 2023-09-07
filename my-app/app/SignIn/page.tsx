@@ -3,12 +3,16 @@ import NavBar from "../Components/NavBar";
 
 export default function SignIn() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-5">
+    <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
       <NavBar />
       <div className="flex gap-16 mx-auto my-10 w-full max-w-6xl">
-        <div className="flex flex-col items-center bg-slate-300 rounded-tr rounded-br pt-20">
-          <img className="w-full h-96 object-cover rounded-tr rounded-br" src="https://via.placeholder.com/919x706" alt="Placeholder" />
-        </div>
+      <div className="w-1/2 flex pt-20 bg-cbe4e8 justify-end items-center rounded-r-md">
+    <img
+        className="object-cover w-full h-full min-h-full min-w-full rounded-r-md"
+        src="https://domf5oio6qrcr.cloudfront.net/medialibrary/11435/b3c65ed2-1c85-4f8f-9bd0-b3503d592ffe.jpg"
+        alt="Cosmetics"
+    />
+</div>
         <div className="flex flex-col gap-12 w-full max-w-lg p-10 bg-white rounded shadow-lg">
           <div className="flex flex-col gap-6">
             <div className="text-black text-4xl font-medium leading-loose tracking-wider">Log in to Exclusive</div>
