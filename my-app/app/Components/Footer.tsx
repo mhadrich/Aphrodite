@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <main className="mt-40 w-screen h-96 pt-0 pb-5 bg-black text-white flex-col justify-end items-center  inline-flex">
+    <main className="mt-20 w-screen h-96 pt-0 pb-5 bg-black text-white flex-col justify-end items-center  inline-flex">
       <div>
-        <div className="gap-20  leading-10 flex justify-between">
+        <div className="mb-10 gap-20 leading-10 flex justify-between">
           {/* EXCLUSIVE */}
           <div>
             <h4 className="font-bold text-2xl">Exclusive</h4>
