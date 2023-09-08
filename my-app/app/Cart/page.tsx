@@ -1,5 +1,3 @@
-import Footer from "../Components/Footer";
-import NavBar from "../Components/NavBar";
 import Item from "./Components/Item";
 
 export default function Cart() {
