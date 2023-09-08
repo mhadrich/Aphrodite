@@ -3,8 +3,8 @@ import NavBar from "../Components/NavBar";
 
 export default function SignIn() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
-      <NavBar />
+    <main className="flex min-h-screen flex-col items-center justify-between p-5">
+
       <div className="flex gap-16 mx-auto my-10 w-full max-w-6xl">
       <div className="w-1/2 flex pt-20 bg-cbe4e8 justify-end items-center rounded-r-md">
     <img
@@ -37,7 +37,7 @@ export default function SignIn() {
           </div>
         </div>
       </div>
-      <Footer />
+
     </main>
   );
 }

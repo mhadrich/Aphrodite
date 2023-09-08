@@ -1,66 +1,48 @@
-// generator client {
-//   provider = "prisma-client-js"
-// }
-// datasource db {
-//   provider = "sqlite"
-//   url      = env("DATABASE_URL")
-// }
-
-// model User {
-//   id        Int       @id @default(autoincrement())
-//   username  String    
-//   email     String    @unique
-  
-//   img       String?
-//   cart      CartItem[]
-//   favourite FavouriteItem[]
-// }
-
-// model Product {
-//   id          Int            @id @default(autoincrement())
-//   name        String
-//   ratings     Float?
-//   description String?
-//   category    String
-//   img         String?
-//   status      String
-//   price       Float
-//   cartUsers   CartItem[]
-//   favUsers    FavouriteItem[]
-// }
-
-// // Pivot table for cart
-// model CartItem {
-//   id        Int     @id @default(autoincrement())
-//   userId    Int
-//   productId Int
-//   user      User    @relation(fields: [userId], references: [id])
-//   product   Product @relation(fields: [productId], references: [id])
-//   @@unique([userId, productId])
-// }
-
-// // Pivot table for favourites
-// model FavouriteItem {
-//   id        Int     @id @default(autoincrement())
-//   userId    Int
-//   productId Int
-//   user      User    @relation(fields: [userId], references: [id])
-//   product   Product @relation(fields: [productId], references: [id])
-//   @@unique([userId, productId])
-// }
-
-
-
-
-
 generator client {
   provider = "prisma-client-js"
 }
-
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+
+
+model Product {
+  id          Int            @id @default(autoincrement())
+  name        String
+  ratings     Float?
+  description String?
+  category    String
+  img         String?
+  status      String
+  price       Float
+  cartUsers   CartItem[]
+  favUsers    FavouriteItem[]
+}
+
+
+model CartItem {
+  id        Int      @id @default(autoincrement())
+  userId    String   // Updated from Int to String
+  productId Int
+  user      User     @relation(fields: [userId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+  @@unique([userId, productId])
+}
+
+model FavouriteItem {
+  id        Int      @id @default(autoincrement())
+  userId    String   // Updated from Int to String
+  productId Int
+  user      User     @relation(fields: [userId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+  @@unique([userId, productId])
+}
+
+
+
+
 
 model User {
   id        String    @id @unique @default(uuid())
@@ -72,4 +54,6 @@ model User {
   verified  Boolean?  @default(false)
   createdAt DateTime? @default(now())
   updatedAt DateTime? @updatedAt
+  cartItems     CartItem[]     
+  favouriteItems FavouriteItem[] 
 }

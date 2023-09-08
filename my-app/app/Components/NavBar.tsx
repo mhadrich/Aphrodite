@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <main className="w-screen h-[100px] bg-gray-100">
+    <main className="w-screen h-[100px] bg-gray-100 mb-20">
       <div className="pt-12 w-screen h-9 justify-center items-center gap-36 inline-flex">
         <div className="justify-start items-start gap-48 flex">
           <div className="w-28 h-6 justify-center items-center flex">
@@ -23,7 +23,7 @@ export default function NavBar() {
         <div className="justify-start items-center gap-6 flex">
           <input
             placeholder="What are you looking for?"
-            className="w-60 pl-5 pr-3 py-1.5 bg-neutral-200 rounded flex-col justify-center items-center gap-2.5 inline-flex"
+            className="w-60 pl-4 pr-3 py-1.5 bg-neutral-200 rounded flex-col justify-center items-center gap-2.5 inline-flex"
           ></input>
           <Link href="/Wishlist">
             <svg
