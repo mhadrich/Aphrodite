@@ -4,7 +4,7 @@ import NavBar from "../Components/NavBar";
 export default function Contact() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
-      <NavBar />
+
       <div className="inline-flex gap-5">
         {/* LEFT-PANEL */}
         <div className="w-80 h-[460px] pt-14 pl-8 bg-white rounded shadow flex-col justify-start items-center inline-flex">
@@ -112,7 +112,7 @@ export default function Contact() {
         </div>
         {/* RIGHT-PANEL */}
       </div>
-      <Footer />
+
     </main>
   );
 }

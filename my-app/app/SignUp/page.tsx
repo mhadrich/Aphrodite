@@ -4,7 +4,7 @@ import NavBar from "../Components/NavBar";
 export default function SignUp() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5">
-      <NavBar />
+
       <div className="flex gap-6 mx-auto my-10 max-w-screen-lg">
         <div className="w-1/2 flex pt-20 bg-cbe4e8 justify-end items-center rounded-r-md">
           <img
@@ -46,7 +46,7 @@ export default function SignUp() {
           </div>
         </div>
       </div>
-      <Footer />
+
     </main>
   );
 }

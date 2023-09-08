@@ -5,7 +5,7 @@ import NavBar from "../Components/NavBar";
 export default function Account() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
-      <NavBar />
+
       <div className="inline-flex gap-10">
         {/* LEFT-PANEL */}
         <div className="w-48 h-72 relative">
@@ -139,7 +139,7 @@ export default function Account() {
         </div>
         {/* RIGHT-PANEL */}
       </div>
-      <Footer />
+
     </main>
   );
 }

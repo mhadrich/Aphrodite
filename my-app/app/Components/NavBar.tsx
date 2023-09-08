@@ -23,7 +23,7 @@ export default function NavBar() {
         <div className="justify-start items-center gap-6 flex">
           <input
             placeholder="What are you looking for?"
-            className="w-60 pl-5 pr-3 py-1.5 bg-neutral-200 rounded flex-col justify-center items-center gap-2.5 inline-flex"
+            className="w-60 pl-4 pr-3 py-1.5 bg-neutral-200 rounded flex-col justify-center items-center gap-2.5 inline-flex"
           ></input>
           <Link href="/Wishlist">
             <svg
