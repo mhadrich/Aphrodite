@@ -14,7 +14,7 @@ model Product {
   description String?
   category    String
   img         String?
-  status      String
+  status      Boolean
   price       Float
   cartUsers   CartItem[]
   favUsers    FavouriteItem[]
@@ -22,7 +22,7 @@ model Product {
 
 model CartItem {
   id        Int     @id @default(autoincrement())
-  userId    String // Updated from Int to String
+  userId    String 
   productId Int
   user      User    @relation(fields: [userId], references: [id])
   product   Product @relation(fields: [productId], references: [id])
@@ -32,7 +32,7 @@ model CartItem {
 
 model FavouriteItem {
   id        Int     @id @default(autoincrement())
-  userId    String // Updated from Int to String
+  userId    String 
   productId Int
   user      User    @relation(fields: [userId], references: [id])
   product   Product @relation(fields: [productId], references: [id])
