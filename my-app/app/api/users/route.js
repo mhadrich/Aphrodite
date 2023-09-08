@@ -1,4 +1,4 @@
-import prisma from '@/libs/prisma';  // Adjust the path based on your project's structure
+import prisma from '@/libs/prisma'; 
 import { NextResponse } from 'next/server';
 
 export const POST = async (req) => {
