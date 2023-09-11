@@ -1,16 +1,20 @@
-import Footer from "./Components/Footer";
-import NavBar from "./Components/NavBar";
+"use client";
+import React from "react";
 import Link from "next/link";
 import ProductCard from "./Components/ProductCard";
-
+import Image from "next/image";
+import image from "../assets/image1.jpg";
+import { useState } from "react";
 
 export default function Home() {
+  const [page, setPage] = useState<number>(1);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
       <div className="mt-[-60px]"></div>
       {/*first container*/}
       <div className="container mx-auto  px-4 flex items-center">
-        <div className="w-56 h-80 flex-col justify-start items-start gap-4 inline-flex mt-0 lg:left-0 p-2">
+        <div className="w-56 h-80 flex-col justify-start items-start gap-4 inline-flex mt-[-2px] lg:left-0 p-2">
           <Link href="/">Makeup</Link>
           <Link href="/">Parfumes</Link>
           <Link href="/">Hygiene</Link>
@@ -19,9 +23,9 @@ export default function Home() {
         </div>
 
         <div>
-          <img
-            className="object-contain w-full ml-9 h-80 object-right-top"
-            src="https://img.freepik.com/free-photo/close-up-collection-make-up-beauty-products_23-2148620012.jpg"
+          <Image
+            className="object-contain mr-9 w-[-1500px] h-[400px] ml-9 h-80 "
+            src={image}
             alt="Beauty products"
           />
         </div>
@@ -435,7 +439,7 @@ export default function Home() {
       </div>
       <div className="w-60 h-14 px-12 py-4 bg-red-500  mt-5 rounded justify-center items-center gap-2.5 inline-flex">
         <div className="text-neutral-50 text-base font-medium leading-normal">
-         <Link href="AllProducts"> View All Products </Link>
+          <Link href="AllProducts"> View All Products </Link>
         </div>
       </div>
       {/* our Products */}
@@ -459,11 +463,15 @@ export default function Home() {
       <div
         className="--tw-border-opacity: 1;
         border-color: rgba(17, 24, 39, var(--tw-border-opacity))"
->
+      >
         <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/64/378124/1.jpg?4483" />
       </div>
 
       {/*New arrival */}
+      <div className="mt-[200px]"></div>
+      {/*livraison */}
+
+      {/*livraison */}
 
       <div className="mt-[200px]"></div>
     </main>
