@@ -62,6 +62,15 @@ export default function ProductCard() {
           </Link>
           {/* FULL VIEW */}
         </div>
+        {/* ADD TO CART */}
+        <div className="group">
+          <div className=" justify-center opacity-0 items-center bg-black w-40 h-12 duration-1000 group-hover:opacity-100">
+            <p className="text-white opacity-0 group-hover:opacity-100">
+              ADD TO CART
+            </p>
+          </div>
+        </div>
+        {/* ADD TO CART */}
         {/* RIGHT SIDE ICONS */}
         <img src="https://cosmetique.tn/17001-large_default/rouge-a-levre-instyle-mat-topface-012-pt1555.jpg" />
       </div>
