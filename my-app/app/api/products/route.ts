@@ -1,44 +1,52 @@
 import prisma from '@/libs/prisma'; 
 import { NextResponse } from 'next/server';
 import type { NextApiRequest } from 'next';
+
 export const config = {
     api: {
         bodyParser: true,
     },
 };
 
-
-export const POST = async (req: NextApiRequest) => {
+export async function POST(request: Request) {
     try {
-        const buffer = [];
-        for await (const chunk of req.body) {
-            buffer.push(chunk);
-        }
-        const body = JSON.parse(Buffer.concat(buffer).toString('utf8'));
+        const body = await request.json();
+        
+        console.log('Request body:', body);
 
-        console.log("Parsed request body:", body);
-
-        if (!body || !body.name || !body.category || !body.status || !body.price) {
+        if (!body || !body.name || !body.category || body.status === undefined || body.price === undefined || !Array.isArray(body.imageUrls)) {
             return NextResponse.json({ message: "Error creating product", error: "Invalid request body" }, { status: 400 });
         }
 
-        const newData = await prisma.product.create({ data: body });
-        return NextResponse.json(newData);
-    } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : 'An unknown error occurred';
-        return NextResponse.json({ message: "Error creating product", error: message }, { status: 500 });
+        const { name, ratings, description, category, status, price, imageUrls } = body;
+
+        const newProduct = await prisma.product.create({
+            data: {
+                name,
+                ratings,
+                description,
+                category,
+                status,
+                price,
+                images: {
+                    create: imageUrls.map((url: string) => ({ url })),
+                },
+            },
+        });
+
+        return NextResponse.json(newProduct);
+    } catch (err: any) {
+        console.error('Error:', err);
+        return NextResponse.json({ message: "Error creating product", error: err.message }, { status: 500 });
     }
-};
+}
 
-
-
-
-export const GET = async (req: NextApiRequest) => {
+export async function GET(request: Request) {
     try {
-        const products = await prisma.product.findMany();
+        const products = await prisma.product.findMany({ include: { images: true } });
         return NextResponse.json(products);
-    } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : 'An unknown error occurred';
-        return NextResponse.json({ message: "Error fetching products", error: message }, { status: 500 });
+    } catch (err: any) {
+        console.error('Error:', err);
+        return NextResponse.json({ message: "Error fetching products", error: err.message }, { status: 500 });
     }
 }
