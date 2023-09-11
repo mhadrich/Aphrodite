@@ -10,7 +10,7 @@ export default function NavBar() {
               href="/"
               className="text-black text-2xl font-bold leading-normal tracking-wide"
             >
-              Exclusive
+              Aphrodite
             </Link>
           </div>
           <div className="justify-start items-start gap-12 flex">
