@@ -8,59 +8,48 @@
 //   );
 // }
 
-// components/AllProducts.js
-// components/AllProducts.tsx
-"use client"
-import { useEffect, useState } from 'react';
 
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  ratings:Number;
-  price: number;
-  imageUrl: string | null;
+"use client"
+import React, { useEffect, useState } from 'react';
+
+interface Image {
+  url: string;
 }
 
-const AllProducts = () => {
+interface Product {
+  name: string;
+  images: Image[];
+}
+
+function AllProducts() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchProducts = async () => {
       try {
-        const res = await fetch('/api/products');
-        const data: Product[] = await res.json();
+        const response = await fetch('api/products');
+        const data = await response.json();
         setProducts(data);
-      } catch (error: any) {
-        setError(error.message);
+      } catch (error) {
+        console.error('Error fetching the products', error);
       }
     };
-
-    fetchData();
+    
+    fetchProducts();
   }, []);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (products.length === 0) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div>
-      {products.map((product) => (
-        <div key={product.id}>
+      {products.map((product, productIndex) => (
+        <div key={productIndex}>
           <h2>{product.name}</h2>
-          <h2>{product.description}</h2>
-          <p>{product.price}</p>
-          <p>{product.ratings.toString()}</p>
-          {product.imageUrl && <img src={product.imageUrl} alt={product.name} />}
+          {product.images.map((image, imageIndex) => (
+            <img key={imageIndex} src={image.url} alt={`${product.name} ${imageIndex + 1}`} />
+          ))}
         </div>
       ))}
     </div>
   );
-};
+}
 
 export default AllProducts;
