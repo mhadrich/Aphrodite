@@ -3,14 +3,12 @@ import React from "react";
 import Link from "next/link";
 import ProductCard from "./Components/ProductCard";
 import Image from "next/image";
-import image from "../assets/image1.jpg";
+// import image from "../assets/image1.jpg";
 import { useState } from "react";
 
 export default function Home() {
-  const [page, setPage] = useState<number>(1);
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
+    <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5 gap-5">
       <div className="mt-[-60px]"></div>
       {/*first container*/}
       <div className="container mx-auto  px-4 flex items-center">
@@ -23,9 +21,9 @@ export default function Home() {
         </div>
 
         <div>
-          <Image
+          <img
             className="object-contain mr-9 w-[-1500px] h-[400px] ml-9 h-80 "
-            src={image}
+            src="../assets/image1.jpg"
             alt="Beauty products"
           />
         </div>
@@ -135,7 +133,7 @@ export default function Home() {
 
       <div className="mt-[400px]"></div>
       {/*cart*/}
-      <div className="inline-flex gap-5">
+      <div className="inline-flex gap-5 ">
         <ProductCard />
         <ProductCard />
         <ProductCard />
@@ -304,8 +302,8 @@ export default function Home() {
 
       <div className="w-[1170px] h-[500px] relative bg-black">
         <div className="w-96 h-96 left-[552px] top-0 absolute opacity-30 bg-zinc-300 rounded-full blur-3xl" />
-        <div className="w-96 left-[56px] top-[121px] absolute text-black text-5xl font-semibold leading-10 tracking-widest">
-          Enhance Your Music Experience
+        <div className="w-96 left-[56px] top-[121px] absolute text-white text-5xl font-semibold leading-10 tracking-widest">
+          Get Your Unique Parfum
         </div>
         <div className="left-[56px] top-[273px] absolute justify-start items-start gap-6 inline-flex">
           <div className="w-16 h-16 relative">
@@ -362,7 +360,7 @@ export default function Home() {
         <div className="left-[56px] top-[69px] absolute text-red-500 text-base font-semibold leading-tight">
           Categories
         </div>
-        <div className="mt-37 ml-526">
+        <div className="mt-[50px] ml-[500px]  w-90px">
           <img
             src="https://media.istockphoto.com/id/537507182/photo/perfume.jpg?s=612x612&w=0&k=20&c=uxlWVVB6JD_Vt4-Ss1EfseslCiSVs01AtCyegeuNOdU="
             alt=""
@@ -444,6 +442,7 @@ export default function Home() {
       </div>
       {/* our Products */}
       <div className="mt-[200px]"></div>
+
       {/*New arrival */}
       <div className="w-96 h-96 flex-col justify-start mt-[-100px] ml-[-660px] items-start gap-14 inline-flex">
         <div className="flex-col justify-start  ml-0 items-start gap-5 flex">
@@ -460,14 +459,40 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div
-        className="--tw-border-opacity: 1;
-        border-color: rgba(17, 24, 39, var(--tw-border-opacity))"
-      >
-        <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/64/378124/1.jpg?4483" />
-      </div>
 
+      <div className="inline flex gap-16 justify-center item-center mr-[-150px]">
+        <div className="object-top-left mr-50 mt-[-250px] ml-[-250px]">
+          <img
+            className=" ml-[100px] "
+            src="https://images.hellomagazine.com/horizon/original_aspect_ratio/a5070f26474d-hugo-boss-perfume-z.jpg"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <div className=" mr-50 mt-[-250px] ml-[-50px]">
+            <img
+              className=" ml-[15px] w-[450px] h-[320px]"
+              src="https://cdn.shopify.com/s/files/1/0502/9393/2199/files/RD_Forever_Mood_Gamme_750x620_89691c93-0576-4e87-9f51-fe7312825e95.jpg?v=1692761458"
+            />
+          </div>
+          <div className="inline-flex gap-16 mt-[270px]">
+            <div className=" mr-30 mt-[-250px] ml-[-50px]">
+              <img
+                className=" ml-[15px] w-[210px] h-[310px]"
+                src="https://img01.ztat.net/article/spp-media-p1/23c9a542328a476aa3480566790c151b/d600e1e933f14ecda59dc3582934341f.jpg?imwidth=1800&filter=packshot"
+              />
+            </div>
+            <div className=" mr-30 mt-[-250px] ml-[-50px]">
+              <img
+                className=" ml-[15px] w-[210px] h-[310px]"
+                src="https://img01.ztat.net/article/spp-media-p1/23c9a542328a476aa3480566790c151b/d600e1e933f14ecda59dc3582934341f.jpg?imwidth=1800&filter=packshot"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       {/*New arrival */}
+
       <div className="mt-[200px]"></div>
       {/*livraison */}
 
