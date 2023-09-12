@@ -12,14 +12,14 @@ export default function Footer() {
             <h3 className="text-xl">Subscribe</h3>
             </Link>
             <p className="">Get 10% off your first order</p>
-            <div className=" justify-start items-center  inline-flex">
+            <div className="justify-start items-center  inline-flex">
               <input
-                className="mt-2 pl-3 border-2 rounded-md bg-black w-56 placeholder-opacity-100"
+                className="absolute mt-2 pl-3 border-2 rounded-md bg-black w-56 placeholder-opacity-100"
                 placeholder="Enter your email"
               ></input>
               <Link href="mailto:exclusive@gmail.com">
                 <svg
-                  className="relative w-8 h-8 inset-y-1"
+                  className="relative left-44 w-8 h-8 inset-y-1"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
