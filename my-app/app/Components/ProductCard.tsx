@@ -202,15 +202,15 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
         </div>
 
         {/* RIGHT SIDE ICONS */}
-        {data.images.length > 0 && <img src={data.images[0].url} />}
+        {data && data.images.length > 0 && <img src={data.images[0].url} />}
       </div>
       <div className="flex-col justify-start items-start gap flex">
         <p className="text-black text-base font-medium leading-normal">
-          {data.name}
+          {data && data.name}
         </p>
         {/* PRICE */}
         <p className="text-red-500 text-base font-medium leading-normal">
-          {data.price}
+          {data && data.price}
         </p>
         {/* PRICE & SALE */}
         {/* STARS */}

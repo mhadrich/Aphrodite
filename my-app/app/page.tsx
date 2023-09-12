@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import ProductCard from "./Components/ProductCard";
+import Services from "../app/About/Components/Services";
 import Image from "next/image";
 // import image from "../assets/image1.jpg";
 import { useState } from "react";
@@ -12,12 +13,12 @@ export default function Home() {
       <div className="mt-[-60px]"></div>
       {/*first container*/}
       <div className="container mx-auto  px-4 flex items-center">
-        <div className="w-56 h-80 flex-col justify-start items-start gap-4 inline-flex mt-[-2px] lg:left-0 p-2">
-          <Link href="/">Makeup</Link>
-          <Link href="/">Parfumes</Link>
-          <Link href="/">Hygiene</Link>
-          <Link href="/">Skin Care</Link>
-          <Link href="/">Hair Care</Link>
+        <div className="w-56 h-80 flex-col justify-start items-start  gap-5 ml-16 inline-flex mt-[-2px] lg:left-0 p-2">
+          <Link href="/AllProducts">Makeup</Link>
+          <Link href="/AllProducts">Parfumes</Link>
+          <Link href="/AllProducts">Hygiene</Link>
+          <Link href="/AllProducts">Skin Care</Link>
+          <Link href="/AllProducts">Hair Care</Link>
         </div>
 
         <div>
@@ -32,7 +33,7 @@ export default function Home() {
 
       {/*flash sales container*/}
 
-      <div className="container2  absolute left-12 justify-start top-[600px]">
+      <div className="container2  absolute left-12 justify-start ml-[48px] top-[500px]">
         <div className="w-96 h-24 justify-start items-end gap-96 inline-flex ml-5">
           <div className="top-3 left-0 items-end gap-20 flex">
             <div className="h-24 flex-col justify-start items-start gap-6 inline-flex">
@@ -91,61 +92,18 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="justify-start items-start gap-2 flex">
-            <svg
-              width="46"
-              height="46"
-              viewBox="0 0 46 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
-              <path
-                d="M22 16L15 23L22 30M15 23H31"
-                stroke="black"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-
-            <svg
-              width="46"
-              height="46"
-              viewBox="0 0 46 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
-              <path
-                d="M14.5 23H31M31 23L24 16M31 23L24 30"
-                stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
         </div>
       </div>
 
       {/*flash sales container*/}
 
-      <div className="mt-[400px]"></div>
-      {/*cart*/}
-      <div className="inline-flex gap-5 ">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </div>
-      {/*cart*/}
-      <div className="mt-[20px]"></div>
+      <div className="mt-[150px]"></div>
 
       {/*btn view all products*/}
-      <div className="w-60 h-14 px-12 py-4 bg-red-500 mt-20 rounded justify-center items-center gap-2.5 inline-flex">
+      <div className="w-60 h-14 px-12 py-4 bg-red-500 mt-10 rounded justify-center items-center gap-2.5 inline-flex">
         <div className="text-neutral-50 text-base font-medium leading-normal">
           View All Products
+          {/* <Link href="/AllProducts"> View All Products </Link> */}
         </div>
       </div>
       {/*btn view all products*/}
@@ -171,47 +129,14 @@ export default function Home() {
               Browse-By-Category
             </div>
           </div>
-          <div className="justify-start ml-35 mr-50 items-start gap-1 flex">
-            <svg
-              width="46"
-              height="46"
-              viewBox="0 0 46 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
-              <path
-                d="M22 16L15 23L22 30M15 23H31"
-                stroke="black"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-
-            <svg
-              width="46"
-              height="46"
-              viewBox="0 0 46 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
-              <path
-                d="M14.5 23H31M31 23L24 16M31 23L24 30"
-                stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
+          
         </div>
         <div className="justify-start items-start gap-7 inline-flex">
           <div className="w-44 h-36 px-14 py-6 rounded border border-black border-opacity-30 flex-col justify-center items-end gap-4 inline-flex">
             <div className="w-14 h-14 relative flex-col justify-start items-start flex"></div>
-            <div className="text-black  text-base font-normal leading-normal">
+            <div className="text-black  text-base font-normal leading-normal gap-5">
               <img
+              className="w-16 h-16 "
                 src="https://cdn4.iconfinder.com/data/icons/beauty-hand-drawn/38/beauty_hand_drawn_icon_illustration_-12-512.png"
                 alt=""
               />
@@ -219,9 +144,10 @@ export default function Home() {
             </div>
           </div>
           <div className="w-44 h-36 px-10 py-6 rounded border border-black border-opacity-30 flex-col justify-center items-center gap-4 inline-flex">
-            <div className="w-14 h-14 relative flex-col justify-start items-start flex" />
+            <div className="w-12 h-14 relative flex-col justify-start items-start flex" />
             <div className="text-black text-base font-normal leading-normal">
               <img
+              className="w-16 h-16 "
                 src="https://cdn4.iconfinder.com/data/icons/beauty-hand-drawn/40/beauty_hand_drawn_icon_illustration_-14-512.png"
                 alt=""
               />
@@ -230,10 +156,11 @@ export default function Home() {
           </div>
           <div className="w-44 h-36 pl-8 pr-9 py-6 rounded border border-black border-opacity-30 flex-col justify-center items-center gap-4 inline-flex">
             <div className="w-14 h-14 relative flex-col justify-start items-start flex">
-              <div className="w-2.5 h-3 justify-start items-end gap-1 inline-flex"></div>
+              <div className="w-40 h-3 justify-start items-end gap-1 inline-flex"></div>
             </div>
             <div className="text-black mt-[-8px] text-base font-normal leading-normal">
               <img
+              className="w-16 h-16 object-center "
                 src="https://cdn4.iconfinder.com/data/icons/beauty-hand-drawn/43/beauty_hand_drawn_icon_illustration_-13-512.png"
                 alt=""
               />
@@ -282,7 +209,7 @@ export default function Home() {
         </div>
         <div className="w-40 h-14 left-3 right-3 px-12 py-4 bg-red-500 rounded  items-center gap-2.5 inline-flex">
           <div className="text-neutral-50 text-base font-medium leading-normal">
-            View All
+            <Link href="AllProducts"> View All </Link>
           </div>
         </div>
         <div className="text-black text-2xl font-semibold leading-10 tracking-wider">
@@ -373,8 +300,8 @@ export default function Home() {
       <div className="mt-[200px]"></div>
 
       {/* our Products */}
-      <div className="w-96 h-28 justify-start items-end mt-[1px] ml-[-760px] gap-196 inline-flex">
-        <div className="flex-col justify-start items-start gap-5 inline-flex">
+      <div className="w-96 h-28 justify-start items-end mt-[1px] ml-[-760px] gap-198 inline-flex">
+        <div className="flex-col  items-start gap-5 inline-flex  mr-96 ">
           <div className="justify-start items-center gap-4 inline-flex">
             <div className="w-5 h-10 relative">
               <div className="w-5 h-10 left-0 top-0 absolute bg-red-500 rounded" />
@@ -383,11 +310,11 @@ export default function Home() {
               Our Products
             </div>
           </div>
-          <div className="text-black text-3xl inline font-semibold leading-20 tracking-wider">
+          <div className="text-black w-3 text-3xl inline font-semibold leading-20 tracking-wider">
             Explore Our Products
           </div>
         </div>
-        <div className="justify-start items-start ml-20 gap-2 flex">
+        <div className="  ml-70 mr-[10px] gap-2 flex  object-right">
           <svg
             width="46"
             height="46"
@@ -464,28 +391,28 @@ export default function Home() {
         <div className="object-top-left mr-50 mt-[-250px] ml-[-250px]">
           <img
             className=" ml-[100px] "
-            src="https://images.hellomagazine.com/horizon/original_aspect_ratio/a5070f26474d-hugo-boss-perfume-z.jpg"
+            src="https://img.freepik.com/photos-gratuite/bouteille-parfum-mot-parfum-dessus_1340-37484.jpg"
           />
         </div>
 
         <div className="flex flex-col">
           <div className=" mr-50 mt-[-250px] ml-[-50px]">
             <img
-              className=" ml-[15px] w-[450px] h-[320px]"
+              className=" ml-[15px] w-[450px] h-[300px]"
               src="https://cdn.shopify.com/s/files/1/0502/9393/2199/files/RD_Forever_Mood_Gamme_750x620_89691c93-0576-4e87-9f51-fe7312825e95.jpg?v=1692761458"
             />
           </div>
           <div className="inline-flex gap-16 mt-[270px]">
             <div className=" mr-30 mt-[-250px] ml-[-50px]">
               <img
-                className=" ml-[15px] w-[210px] h-[310px]"
-                src="https://img01.ztat.net/article/spp-media-p1/23c9a542328a476aa3480566790c151b/d600e1e933f14ecda59dc3582934341f.jpg?imwidth=1800&filter=packshot"
+                className=" ml-[15px] w-[210px] h-[305px]"
+                src="https://media-afr-cdn.oriflame.com/productImage/?externalMediaId=product-management-media%2F42343%2F42343_3.png%3Fversion%3D1620376200&w=1440&bc=%23f5f5f5&ib=%23f5f5f5&h=1440&q=30"
               />
             </div>
             <div className=" mr-30 mt-[-250px] ml-[-50px]">
               <img
-                className=" ml-[15px] w-[210px] h-[310px]"
-                src="https://img01.ztat.net/article/spp-media-p1/23c9a542328a476aa3480566790c151b/d600e1e933f14ecda59dc3582934341f.jpg?imwidth=1800&filter=packshot"
+                className=" ml-[15px] w-[210px] h-[305px]"
+                src="https://media-afr-cdn.oriflame.com/productImage/?externalMediaId=product-management-media%2F42343%2F42343_3.png%3Fversion%3D1620376200&w=1440&bc=%23f5f5f5&ib=%23f5f5f5&h=1440&q=30"
               />
             </div>
           </div>
@@ -493,12 +420,13 @@ export default function Home() {
       </div>
       {/*New arrival */}
 
-      <div className="mt-[200px]"></div>
-      {/*livraison */}
+      {/*Services  */}
+      <div className="mt-[96px]">
+        <Services />
+      </div>
+      {/*Services  */}
 
-      {/*livraison */}
-
-      <div className="mt-[200px]"></div>
+      <div className="mt-[96px]"></div>
     </main>
   );
 }
