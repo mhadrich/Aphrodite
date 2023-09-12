@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UserDropDown from "./UserDropDown";
 
 export default function NavBar() {
   return (
@@ -25,7 +26,7 @@ export default function NavBar() {
             placeholder="What are you looking for?"
             className="w-60 pl-4 pr-3 py-1.5 bg-neutral-200 rounded flex-col justify-center items-center gap-2.5 inline-flex"
           ></input>
-          <Link href="/Wishlist">
+          {/* <Link href="/Wishlist">
             <svg
               className="w-6 h-6 relative"
               width="32"
@@ -81,7 +82,8 @@ export default function NavBar() {
                 stroke-linejoin="round"
               />
             </svg>
-          </Link>
+          </Link> */}
+          <UserDropDown />
         </div>
       </div>
     </main>

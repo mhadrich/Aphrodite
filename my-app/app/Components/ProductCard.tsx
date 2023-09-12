@@ -200,7 +200,6 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
           </Link>
           {/* FULL VIEW */}
         </div>
-
         {/* RIGHT SIDE ICONS */}
         {data && data.images.length > 0 && <img src={data.images[0].url} />}
       </div>
