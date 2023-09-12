@@ -50,13 +50,17 @@ function SignUp() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5">
       <div className="flex gap-6 mx-auto my-10 max-w-screen-lg">
-        <div className="w-1/2 flex pt-20 bg-cbe4e8 justify-end items-center rounded-r-md">
-          <img
-            className="object-cover w-full h-full rounded-r-md"
-            src="https://www.nutriglowcosmetics.com/wp-content/uploads/2021/09/Know-Why-natural-cosmetic-products-are-beneficial-for-your-skin-feature.jpg"
-            alt="Cosmetics"
-          />
-        </div>
+      {/* <div className="flex flex-col items-stretch w-1/2 gap-6 p-10 "> */}
+  <img
+    className="object-cover items-stretch w-1/2 rounded-t-md"
+    src="https://row.byterry.com/imager/variantimage/1396726/CrayonBlackstarMultiProduct_2022_Still-Life-1_c9fedec9053052e200634301edbc185a.jpg"
+    alt="Cosmetics"
+  />
+{/* </div> */}
+
+
+
+
         <div className="flex flex-col w-1/2 gap-6 p-10 bg-white rounded shadow-lg">
           <div className="flex flex-col gap-6">
             <div className="text-black text-4xl font-medium leading-loose tracking-wider">
