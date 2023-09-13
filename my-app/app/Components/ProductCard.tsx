@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ProductCard() {
   return (
     <main>
-      <div className="w-64 h-64 mb-1 relative bg-neutral-100 rounded border">
+      <div className="group w-64 h-64 mb-1 relative bg-neutral-100 rounded border">
         {/* RIGHT SIDE ICONS */}
         <div className="left-[218px] top-[8px] absolute flex-col justify-start items-start gap-2 inline-flex">
           {/* FAV */}
@@ -63,19 +63,54 @@ export default function ProductCard() {
           {/* FULL VIEW */}
         </div>
         {/* ADD TO CART */}
-        <div className="group">
-          <div className=" justify-center opacity-0 items-center bg-black w-40 h-12 duration-1000 group-hover:opacity-100">
-            <p className="text-white opacity-0 group-hover:opacity-100">
-              ADD TO CART
-            </p>
+      
+         <div className="absolute">
+          <svg
+            className=" transition-transform opacity-0 transform ml-4 mt-4 group-hover:scale-150 group-hover:opacity-100"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
+              stroke="black"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
+              stroke="black"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M3 5H7L10 22H26"
+              stroke="black"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
+              stroke="black"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
           </div>
-        </div>
-        {/* ADD TO CART */}
+
+      
+
         {/* RIGHT SIDE ICONS */}
         <img src="https://cosmetique.tn/17001-large_default/rouge-a-levre-instyle-mat-topface-012-pt1555.jpg" />
       </div>
-      <div className="flex-col justify-start items-start gap flex">
-        <p className="text-black text-base font-medium leading-normal">
+      <div className="flex-col justify-start items-start  flex">
+        <p className="text-black text-base font-medium leading-normal ">
           Channel Shit
         </p>
         {/* PRICE */}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Services from './Components/Services.tsx'
+import Services from './Components/Services'
 
 export default function About() {
   return (
