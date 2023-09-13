@@ -118,7 +118,7 @@
 //     </main>
 //   );
 // }
-"use client";
+
 import Link from "next/link";
 import React from "react";
 
@@ -127,6 +127,7 @@ interface Image {
 }
 
 interface Product {
+  id: number;
   name: string;
   price: number;
   images: Image[];
@@ -138,7 +139,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = (props) => {
   const { data } = props;
-  // console.log('this console',data);
+  
   return (
     <main>
       <div className="w-64 h-64 mb-1 relative bg-neutral-100 rounded border">
@@ -177,7 +178,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
           </svg>
           {/* FAV */}
           {/* FULL VIEW */}
-          <Link href="/ProductDetail/:id">
+          <Link href={`/ProductDetail/${data && data.id}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

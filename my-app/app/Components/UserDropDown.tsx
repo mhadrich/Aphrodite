@@ -77,13 +77,15 @@ export default function UserDropDown() {
               </Link>
             </li>
           </ul>
-          <div className="py-2 hover:bg-red-500 rounded-b-lg">
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
-            >
-              Sign out
-            </a>
+          <div className="group">
+            <div className="py-2 group-hover:bg-red-500 rounded-b-lg">
+              <p
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 group-hover:bg-red-500 hover:text-white"
+              >
+                Sign out
+              </p>
+            </div>
           </div>
         </div>
       </div>
