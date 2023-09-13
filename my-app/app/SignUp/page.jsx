@@ -8,6 +8,7 @@ function SignUp() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
+    lastName: "", 
     email: "",
     password: "",
     passwordConfirm: "",
@@ -74,6 +75,7 @@ function SignUp() {
             <div className="flex flex-col gap-6">
               {[
                 { label: "Name", name: "name", type: "text" },
+                { label: "Last Name", name: "lastName", type: "text" },
                 { label: "Email or Phone Number", name: "email", type: "text" },
                 { label: "Password", name: "password", type: "password" },
                 {
