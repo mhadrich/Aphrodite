@@ -50,3 +50,18 @@ export async function GET(request: Request) {
         return NextResponse.json({ message: "Error fetching products", error: err.message }, { status: 500 });
     }
 }
+
+
+export async function getProductById(productId: string) {
+    try {
+      const product = await prisma.product.findUnique({
+        where: {
+          id: productId,
+        },
+      });
+      return product;
+    } catch (error) {
+      console.error('Error fetching product by ID:', error);
+      throw error;
+    }
+  }
