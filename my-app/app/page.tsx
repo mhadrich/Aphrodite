@@ -5,8 +5,8 @@ import ProductCard from "./Components/ProductCard";
 import Services from "../app/About/Components/Services";
 import HPCarousel from "./Components/Carousel";
 import Stopwatch from "./Components/Stopwatch";
-import Image from "next/image";
-// import image from "../assets/image1.jpg";
+
+
 
 export default function Home() {
   return (
