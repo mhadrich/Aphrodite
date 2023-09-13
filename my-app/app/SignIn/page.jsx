@@ -24,29 +24,30 @@ export default function SignIn() {
         },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         setMessage("Login successful!");
-        localStorage.setItem("token", data.token); 
-  
-        // Fetch user data
+        localStorage.setItem("token", data.token);
+        await router.push("/");
+        window.location.reload();
+
         try {
           const userResponse = await fetch("/api/user/me", {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": `Bearer ${data.token}`,  // Add this header
+              Authorization: `Bearer ${data.token}`,
             },
           });
           const userData = await userResponse.json();
-  
-          console.log('User data:', userData);  // Log the user data. You can set it in state or context as per your needs
+
+          console.log("User data:", userData);
         } catch (error) {
-          console.error('Failed to fetch user data:', error);
+          console.error("Failed to fetch user data:", error);
         }
-  
+
         router.push("/");
       } else {
         setMessage(data.message || "Login failed.");
@@ -55,7 +56,7 @@ export default function SignIn() {
       setMessage("An error occurred. Please try again.");
     }
   };
-  
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5">
       <div className="flex gap-16 mx-auto my-10 w-full max-w-6xl">
