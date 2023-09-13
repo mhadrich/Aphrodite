@@ -20,12 +20,7 @@ interface ProductCardProps {
 export default function ProdDetailMain(props) {
   const { data } = props;
   const [counter, setCounter] = useState(0);
-  const [big, setBig] = useState(
-    "https://c-co.niceshops.com/upload/image/product/large/default/29272_f54416ea.1024x1024.png"
-  );
-  // const [big, setBig] = useState(
-  //   data && data.images.length > 0 && data.image[0].url
-  // );
+  const [big, setBig] = useState(data.images[0].url);
   const [availability, setAvailability] = useState<any>();
   useEffect(() => {
     if (data && data.status) {
@@ -49,50 +44,19 @@ export default function ProdDetailMain(props) {
       <div className="inline-flex gap-5">
         {/* LEFT IMAGES */}
         <div className="w-28 h-96 flex flex-col gap-5">
-          <div>
-            <img
-              onClick={() =>
-                setBig(
-                  "https://c-co.niceshops.com/upload/image/product/large/default/29272_f54416ea.1024x1024.png"
-                )
-              }
-              className="w-28 h-28  rounded justify-center items-center border opacity-80 hover:opacity-100"
-              src="https://c-co.niceshops.com/upload/image/product/large/default/29272_f54416ea.1024x1024.png"
-            />
-          </div>
-          <div>
-            <img
-              onClick={() =>
-                setBig(
-                  "https://c-co.niceshops.com/upload/image/product/large/default/xerjoff-erba-pura-eau-de-parfum-392922-fr.png"
-                )
-              }
-              className="w-28 h-28  rounded justify-center items-center border opacity-80 hover:opacity-100"
-              src="https://c-co.niceshops.com/upload/image/product/large/default/xerjoff-erba-pura-eau-de-parfum-392922-fr.png"
-            />
-          </div>
-          <div>
-            <img
-              onClick={() =>
-                setBig(
-                  "https://c-co.niceshops.com/upload/image/product/large/default/xerjoff-erba-pura-eau-de-parfum-392936-fr.jpg"
-                )
-              }
-              className="w-28 h-28  rounded justify-center items-center border opacity-80 hover:opacity-100"
-              src="https://c-co.niceshops.com/upload/image/product/large/default/xerjoff-erba-pura-eau-de-parfum-392936-fr.jpg"
-            />
-          </div>
-          <div>
-            <img
-              onClick={() =>
-                setBig(
-                  "https://c-co.niceshops.com/upload/image/product/large/default/xerjoff-erba-pura-eau-de-parfum-392943-fr.jpg"
-                )
-              }
-              className="w-28 h-28  rounded justify-center items-center opacity-80 hover:opacity-100"
-              src="https://c-co.niceshops.com/upload/image/product/large/default/xerjoff-erba-pura-eau-de-parfum-392943-fr.jpg"
-            />
-          </div>
+          {data.images &&
+            data.images.map((image: string) => {
+              console.log('the images',image);
+              return (
+                <div>
+                  <img
+                    onClick={() => setBig(image.url)}
+                    className="w-28 h-28  rounded justify-center items-center border opacity-80 hover:opacity-100"
+                    src={image.url}
+                  />
+                </div>
+              );
+            })}
         </div>
         {/* LEFT IMAGES */}
         {/* MAIN IMAGE */}
@@ -189,7 +153,10 @@ export default function ProdDetailMain(props) {
             </div>
             {/* ADD REMOVE */}
 
-            <Link href='./Cart' className="w-40 h-11 bg-red-500 rounded justify-center items-center inline-flex hover:bg-red-300">
+            <Link
+              href="./Cart"
+              className="w-40 h-11 bg-red-500 rounded justify-center items-center inline-flex hover:bg-red-300"
+            >
               <p className="text-neutral-50 text-base font-medium leading-normal">
                 Buy Now
               </p>
