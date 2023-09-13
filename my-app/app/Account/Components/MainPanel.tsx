@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PictureUpload from "./PictureUpload";
 
 export default function MainPanel() {
   return (
@@ -7,13 +8,14 @@ export default function MainPanel() {
         <div className="left-[80px] top-[40px] absolute text-red-500 text-xl font-medium leading-7">
           Edit Your Profile
         </div>
+        <PictureUpload />
         <div className="left-[80px] top-[84px] absolute justify-start items-start gap-12 inline-flex">
           <div className="flex-col justify-start items-start gap-2 inline-flex">
             <p className="text-black text-base font-normal leading-normal">
               First Name
             </p>
             <input
-              placeholder="Md"
+              placeholder="Malek"
               className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
             />
           </div>
@@ -22,7 +24,7 @@ export default function MainPanel() {
               Last Name
             </p>
             <input
-              placeholder="Rimel"
+              placeholder="Hadrich"
               className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
             />
           </div>
@@ -33,7 +35,7 @@ export default function MainPanel() {
               Email
             </p>
             <input
-              placeholder="rimel1111@gmail.com"
+              placeholder="mhadrich@gmail.com"
               type="email"
               className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
             />
@@ -43,7 +45,7 @@ export default function MainPanel() {
               Address
             </p>
             <input
-              placeholder="Kingston, 5236, United State"
+              placeholder="34 Chem's Street"
               className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
             />
           </div>
