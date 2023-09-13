@@ -9,6 +9,9 @@ const fetchProdById = async (id: number) => {
       where: {
         id,
       },
+      include:{
+        images:true,
+      },
     });
     return mainProd;
   } catch (error) {
@@ -24,6 +27,9 @@ const fetchProdByCategory = async (category: string) => {
       where: {
         category,
       },
+      include:{
+        images:true,
+      },
     });
     return relatedProd;
   } catch (error) {
@@ -32,21 +38,6 @@ const fetchProdByCategory = async (category: string) => {
     prisma.$disconnect();
   }
 };
-
-interface Image {
-  url: string;
-}
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  images: Image[];
-}
-
-interface ProductCardProps {
-  data: Product;
-}
 
 export default async function ProductDetail({ params }: { params: { slug: string }}) {
   const mainProduct = await fetchProdById(parseInt(params.slug));

@@ -122,24 +122,21 @@
 import Link from "next/link";
 import React from "react";
 
-interface Image {
-  url: string;
+interface Props {
+  images: { id: number; url: string; productId: number }[] & {
+    id: number;
+    name: string;
+    ratings: number | null;
+    description: string | null;
+    category: string;
+    status: boolean;
+    price: number;
+  };
 }
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  images: Image[];
-}
-
-interface ProductCardProps {
-  data: Product;
-}
-
-const ProductCard: React.FC<ProductCardProps> = (props) => {
+const ProductCard = (props: Props) => {
   const { data } = props;
-  
+
   return (
     <main>
       <div className="w-64 h-64 mb-1 relative bg-neutral-100 rounded border">

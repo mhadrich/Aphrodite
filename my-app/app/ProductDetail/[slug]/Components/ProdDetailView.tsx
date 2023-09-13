@@ -1,24 +1,30 @@
 import ProductCard from "@/app/Components/ProductCard";
 import ProdDetailMain from "./ProdDetailsMain";
 
-interface Image {
-  url: string;
+interface Props {
+  mainData: { images: { id: number; url: string; productId: number }[] } & {
+    id: number;
+    name: string;
+    ratings: number | null;
+    description: string | null;
+    category: string;
+    status: boolean;
+    price: number;
+  };
+  relatedData: { images: { id: number; url: string; productId: number }[] } & {
+    id: number;
+    name: string;
+    ratings: number | null;
+    description: string | null;
+    category: string;
+    status: boolean;
+    price: number;
+  };
 }
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  images: Image[];
-}
-
-interface ProductCardProps {
-  data: Product;
-}
-
-export default function ProdDetailView(props): React.FC<ProductCardProps> {
+export default function ProdDetailView(props: Props) {
   const { mainData, relatedData } = props;
-  
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
       <ProdDetailMain data={mainData} />
@@ -31,7 +37,7 @@ export default function ProdDetailView(props): React.FC<ProductCardProps> {
       </div>
       <div className="pt-32 gap-5 inline-flex">
         {relatedData &&
-          relatedData.map((prod) => {
+          relatedData.map((prod:Props) => {
             <ProductCard data={prod} />;
           })}
       </div>
