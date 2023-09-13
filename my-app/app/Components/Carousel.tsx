@@ -13,8 +13,8 @@ interface CarouselProps{
 export default function HPCarousel() {
   return (
     <main>
-      <div className='w-96'>
-        <Carousel autoPlay showThumbs={false} showStatus={false} interval={3000} transitionTime={1000} infiniteLoop>
+      <div className='w-[800px] h-[72px] mb-52'>
+        <Carousel autoPlay showThumbs={false} showStatus={false} interval={2500} transitionTime={500} infiniteLoop>
           <div>
             <img src="/img-1.jpeg" alt="image1" />
           </div>
