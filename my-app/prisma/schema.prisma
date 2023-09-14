@@ -50,7 +50,7 @@ model FavouriteItem {
 model User {
   id             String          @id @unique @default(uuid())
   name           String
-  lastName       String          @default("")
+  lastName       String?
   email          String          @unique
   password       String
   role           String?         @default("user")
@@ -62,3 +62,4 @@ model User {
   cartItems      CartItem[]
   favouriteItems FavouriteItem[]
 }
+

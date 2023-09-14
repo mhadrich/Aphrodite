@@ -18,7 +18,7 @@ export default function UserDropDown() {
   const [toggle, setToggle] = useState(false);
   const [hide, setHide] = useState("");
   const [userData, setUserData] = useState<UserData | any>(null);
-  // console.log('Initial User Data:', userData.data.user);
+  
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -92,7 +92,7 @@ export default function UserDropDown() {
       <div className={hide}>
         <div className="z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
           <div className="px-4 py-3 text-sm text-gray-900">
-            <div className="font-medium ">{userData.data.user.name && userData.data.user.name}</div>
+            <div className="font-medium ">{userData.data.user.name +' '+ userData.data.user.lastName}</div>
             <div className="truncate">{userData.data.user.email}</div>
           </div>
           <ul className="py-2 text-sm text-gray-700">
@@ -114,12 +114,29 @@ export default function UserDropDown() {
           </ul>
           <div className="group">
             <div className="py-2 group-hover:bg-red-500 rounded-b-lg">
-              <a
-                href="/"
-                className="block px-4 py-2 text-sm text-gray-700 group-hover:bg-red-500 hover:text-white"
-              >
-                Sign out
-              </a>
+            <a
+  href="/"
+  className="block px-4 py-2 text-sm text-gray-700 group-hover:bg-red-500 hover:text-white"
+  onClick={async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/auth/logout', {
+        method: 'POST',
+      });
+      
+      if (response.ok) {
+        window.location.href = '/';
+      } else {
+        console.error('Logout failed');
+      }
+    } catch (error) {
+      console.error('An error occurred while logging out:', error);
+    }
+  }}
+>
+  Sign out
+</a>
+
             </div>
           </div>
         </div>
