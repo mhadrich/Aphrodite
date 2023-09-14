@@ -19,10 +19,17 @@ function MyTimer({ expiryTimestamp }) {
   });
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <div style={{ fontSize: "70px", width:"23px" }}>
-        <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
-      </div>
+    <div className="flex flex-col">
+        <div className="inline-flex text-2xsm gap-5 font-semibold">
+          <p>Days</p>
+          <p>Hours</p>
+          <p>Minutes</p>
+          <p>Seconds</p>
+        </div>
+    <div className="text-4xl">
+      <span>{days} </span>:<span> {hours} </span>:<span> {minutes} </span>:
+      <span> {seconds} </span>
+    </div>
     </div>
   );
 }

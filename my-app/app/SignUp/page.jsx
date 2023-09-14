@@ -8,7 +8,11 @@ function SignUp() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
+
     lastName: "", 
+
+    lastName: "",
+
     email: "",
     password: "",
     passwordConfirm: "",
@@ -23,45 +27,40 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(formData);  
+      console.log(formData);
 
       const response = await fetch("/api/auth/register", {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       const data = await response.json();
-      console.log(response, data);  
+      console.log(response, data);
       if (response.ok) {
         setMessage("Registration successful! You can now log in.");
-        localStorage.setItem('token', data.token); 
-        router.push('/SignIn'); 
+        localStorage.setItem("token", data.token);
+        router.push("/SignIn");
         setMessage(data.message || "Registration failed.");
       }
     } catch (error) {
-      console.error(error); 
+      console.error(error);
       setMessage("An error occurred. Please try again.");
     }
   };
 
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5">
       <div className="flex gap-6 mx-auto my-10 max-w-screen-lg">
-      {/* <div className="flex flex-col items-stretch w-1/2 gap-6 p-10 "> */}
-  <img
-    className="object-cover items-stretch w-1/2 rounded-t-md"
-    src="https://row.byterry.com/imager/variantimage/1396726/CrayonBlackstarMultiProduct_2022_Still-Life-1_c9fedec9053052e200634301edbc185a.jpg"
-    alt="Cosmetics"
-  />
-{/* </div> */}
-
-
-
-
+        {/* <div className="flex flex-col items-stretch w-1/2 gap-6 p-10 "> */}
+        <img
+          className="object-cover items-stretch w-1/2 rounded-l-md"
+          src="https://row.byterry.com/imager/variantimage/1396726/CrayonBlackstarMultiProduct_2022_Still-Life-1_c9fedec9053052e200634301edbc185a.jpg"
+          alt="Cosmetics"
+        />
+        {/* </div> */}
         <div className="flex flex-col w-1/2 gap-6 p-10 bg-white rounded shadow-lg">
           <div className="flex flex-col gap-6">
             <div className="text-black text-4xl font-medium leading-loose tracking-wider">
@@ -102,19 +101,20 @@ function SignUp() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col items-start gap-6">
+            <div className="flex flex-col items-start gap-6 mt-6">
               <button
                 type="submit"
-                className="w-full px-32 py-4 bg-red-500 rounded text-neutral-50 text-base font-medium"
+                className="w-full h-14 px-32 py-4 bg-red-500 rounded text-neutral-50 text-base font-medium"
               >
                 Create Account
               </button>
               <div className="flex flex-col gap-6 items-start">
-                <button className="w-full px-20 py-4 border border-black border-opacity-40 rounded flex items-center gap-4 justify-center">
-                  <div className="w-6 h-6 bg-gray-300"></div>
+                <button className="w-[408px] h-14  py-4 border border-black border-opacity-40 rounded flex items-center gap-4 justify-center">
+                  <img className="w-6 h-6"
+                  src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png"/>
                   Sign up with Google
                 </button>
-                <div className="flex flex-col items-start gap-1">
+                <div className="inline-flex items-start gap-2">
                   <div className="opacity-70 text-black text-base font-normal">
                     Already have an account?
                   </div>

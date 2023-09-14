@@ -131,11 +131,15 @@ interface Props {
     category: string;
     status: boolean;
     price: number;
-  };
+  }[];
 }
 
-const ProductCard = (props: Props) => {
-  const { data } = props;
+// interface Props {
+//   data:[]
+// }
+
+const ProductCard =( props: Props) => {
+  const { data:data } = props;
 
   return (
     <main>
@@ -246,7 +250,6 @@ const ProductCard = (props: Props) => {
         {/* RIGHT SIDE ICONS */}
         {data && data.images.length > 0 && <img src={data.images[0].url} />}
       </div>
-
       <div className="flex-col justify-start items-start gap flex">
         <p className="text-black text-base font-medium leading-normal">
           {data && data.name}

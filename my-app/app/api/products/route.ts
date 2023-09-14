@@ -51,6 +51,25 @@ export async function GET(request: Request) {
     }
 }
 
+// export async function DELETE(request: Request) {
+//   try {
+    
+//     await prisma.cartItem.deleteMany();
+//     await prisma.favouriteItem.deleteMany();
+//     await prisma.image.deleteMany();
+    
+    
+//     await prisma.product.deleteMany();
+
+
+//     return NextResponse.json({ message: "Successfully deleted all products" });
+//   } catch (err: any) {
+//     console.error('Error:', err);
+//     return NextResponse.json({ message: "Error deleting products", error: err.message }, { status: 500 });
+//   }
+// }
+
+
 
 // export async function getProductById(productId: string) {
 //     try {
