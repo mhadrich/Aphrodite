@@ -10,10 +10,14 @@ import ThisMonth from "./Components/ThisMonth";
 import OurProducts from "./Components/OurProducts";
 import NewArrival from "./Components/NewArrival";
 
-export default function Home() {
+interface Products{
+  data:[]
+}
 
-  const [products, setProducts] = useState<products[]>([]);
+export default function Home() {
+  const [products, setProducts] = useState<Products[]>([]);
   console.log(products);
+  
   
   useEffect(() => {
     const fetchProducts = async () => {
@@ -32,7 +36,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5 gap-5">
       <div className="flex">
-        <Sidebar />
+        <Sidebar data={products} />
         <HPCarousel />
       </div>
       <FlashSales data={products} />

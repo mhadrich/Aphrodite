@@ -7,6 +7,7 @@ interface Props {
 
 export default function OurProducts(props:Props) {
   const { data } = props;
+  const datum = data.slice(0, 8);
   return (
     <div className="justify-center items-center flex flex-col">
       <div className="flex flex-col gap-5 ">
@@ -54,8 +55,8 @@ export default function OurProducts(props:Props) {
           Explore Our Products
         </p>
       </div>
-      <div className="inline-grid grid-cols-4 mt-5 gap-4">
-        {data && data.map((elem)=>{
+      <div className="grid grid-cols-4 mt-5 gap-4">
+        {datum && datum.map((elem)=>{
           return(
             <ProductCard data={elem} />
           )
