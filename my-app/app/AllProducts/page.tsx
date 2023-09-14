@@ -1,13 +1,3 @@
-// export default function AllProducts() {
-//   return (
-//     <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
-
-//       AllProducts
-
-//     </main>
-//   );
-// }
-
 "use client";
 import React, { useEffect, useState } from "react";
 import ProductCard from "../Components/ProductCard";
@@ -39,8 +29,8 @@ function AllProducts() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
-      <div className="inline-flex gap-5">
+    <main className="flex min-h-screen flex-col items-center justify-between px-20">
+      <div className="inline-grid grid-cols-4 gap-6">
         {products.map((product, productIndex) => (
           <ProductCard key={productIndex} data={product} />
         ))}
