@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NewArrival() {
   return (
-    <div className="absolute mt-[3300px]">
+    <div className="pt-12">
       <div className="w-96 h-96 flex-col justify-start mt-[-100px] ml-[-140px] items-start gap-14 inline-flex">
         <div className="flex-col justify-start  mr-[-960px] items-start gap-5 flex">
           <div className="justify-start items-center gap-4 inline-flex mr-96px">

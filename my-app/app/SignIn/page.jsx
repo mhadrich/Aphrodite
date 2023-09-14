@@ -58,10 +58,10 @@ export default function SignIn() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5">
-      <div className="flex gap-16 mx-auto my-10 w-full max-w-6xl">
-        <div className="w-1/2 flex pt-20 bg-cbe4e8 justify-end items-center rounded-r-md">
+      <div className="flex gap-6 mx-auto my-10 w-full max-w-6xl">
+        <div className=" w-1/2 flex  justify-end items-center rounded-r-md">
           <img
-            className="object-cover w-full h-full min-h-full min-w-full rounded-r-md"
+            className="object-cover w-full h-full rounded-l-md"
             src="https://domf5oio6qrcr.cloudfront.net/medialibrary/11435/b3c65ed2-1c85-4f8f-9bd0-b3503d592ffe.jpg"
             alt="Cosmetics"
           />
@@ -69,7 +69,7 @@ export default function SignIn() {
         <div className="flex flex-col gap-12 w-full max-w-lg p-10 bg-white rounded shadow-lg">
           <div className="flex flex-col gap-6">
             <div className="text-black text-4xl font-medium leading-loose tracking-wider">
-              Log in to Exclusive
+              Log in to Aphrodite
             </div>
             <div className="text-black text-base font-normal leading-normal">
               Enter your details below
@@ -99,7 +99,7 @@ export default function SignIn() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col items-start gap-10">
+            <div className="flex flex-col items-center gap-5 mt-8">
               <button
                 type="submit"
                 className="w-full px-32 py-4 bg-red-500 rounded text-white text-base font-medium"

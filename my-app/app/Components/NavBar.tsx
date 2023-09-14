@@ -15,10 +15,10 @@ export default function NavBar() {
             </Link>
           </div>
           <div className="justify-start items-start gap-12 flex">
-            <Link href="/">Home</Link>
-            <Link href="/Contact">Contact</Link>
-            <Link href="/About">About</Link>
-            <Link href="/SignUp">Sign Up</Link>
+            <Link className="hover:text-red-500" href="/">Home</Link>
+            <Link className="hover:text-red-500" href="/Contact">Contact</Link>
+            <Link className="hover:text-red-500" href="/About">About</Link>
+            <Link className="hover:text-red-500" href="/SignUp">Sign Up</Link>
           </div>
         </div>
         <div className="justify-start items-center gap-6 flex">
