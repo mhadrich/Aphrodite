@@ -1,8 +1,13 @@
 import ProductCard from "./ProductCard";
 import Stopwatch from "./Stopwatch";
-import ViewAllProdButton from "./ViewAllProdButton";
 
-export default function Sidebar() {
+interface Props {
+  data: [];
+}
+
+export default function Sidebar(props: Props) {
+  const { data } = props;
+  const datum = data.slice(data.length - 5, data.length - 1);
   return (
     <div className="flex-col justify-center items-start gap-6 inline-flex">
       <div className="justify-start items-center gap-4 inline-flex">
@@ -18,10 +23,10 @@ export default function Sidebar() {
         </div>
       </div>
       <div className="inline-flex gap-5">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {datum &&
+          datum.map((elem) => {
+            return <ProductCard data={elem} />;
+          })}
       </div>
     </div>
   );
