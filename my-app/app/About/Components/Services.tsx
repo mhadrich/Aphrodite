@@ -1,6 +1,6 @@
 export default function Item() {
   return (
-    <div className="pt-96 w-screen h-40 justify-center items-center gap-20 inline-flex">
+    <div className="pt-40 w-screen h-40 justify-center items-center gap-20 inline-flex">
       {/* 1 */}
       <div className="group">
         <div className="flex-col justify-start items-center gap-6 inline-flex">

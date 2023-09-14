@@ -1,58 +1,66 @@
 import Link from "next/link";
+import ProductCard from "./ProductCard";
+import ViewAllProdButton from "./ViewAllProdButton";
 
-export default function Categories() {
+export default function OurProducts() {
   return (
-    <div className="w-96 h-28 justify-start items-end  ml-[-690px]  inline-flex">
-      <div className="  items-start gap-5   mr-96 ">
-        <div className="justify-start  gap-4 inline-flex">
-          <div className="w-5 h-10 relative">
-            <div className="w-5 h-10 left-0 top-0 absolute bg-red-500 rounded" />
-          </div>
-          <div className="text-red-500 text-base font-semibold leading-tight">
+    <div className="justify-center items-center flex flex-col">
+      <div className="flex flex-col gap-5 ">
+        <div className="items-center gap-4 flex">
+          <div className=" w-5 h-10 bg-red-500 rounded" />
+          <p className=" text-red-500 text-base font-semibold leading-tight pr-96">
             Our Products
-          </div>
+          </p>
+          <div className="gap-2 flex relative pl-96">
+          <svg
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
+            <path
+              d="M22 16L15 23L22 30M15 23H31"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <svg
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
+            <path
+              d="M14.5 23H31M31 23L24 16M31 23L24 30"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
-        <div className="text-black w-3 text-2xl inline font-semibold leading-20 tracking-wider">
+        </div>
+        <p className="text-black text-2xl font-semibold tracking-wider">
           Explore Our Products
-        </div>
-        
+        </p>
       </div>
-
-      <div className="  ml-96 mr-[10px]  gap-2 flex  object-left">
-        <svg
-          width="46"
-          height="46"
-          viewBox="0 0 46 46"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
-          <path
-            d="M22 16L15 23L22 30M15 23H31"
-            stroke="black"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-
-        <svg
-          width="46"
-          height="46"
-          viewBox="0 0 46 46"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="23" cy="23" r="23" fill="#F5F5F5" />
-          <path
-            d="M14.5 23H31M31 23L24 16M31 23L24 30"
-            stroke="black"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+      <div className="inline-grid grid-cols-4 mt-5 gap-4">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
       </div>
+      <ViewAllProdButton />
     </div>
   );
 }
