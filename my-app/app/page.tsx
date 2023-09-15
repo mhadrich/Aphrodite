@@ -10,12 +10,25 @@ import ThisMonth from "./Components/ThisMonth";
 import OurProducts from "./Components/OurProducts";
 import NewArrival from "./Components/NewArrival";
 
-interface Products{
-  data:[]
+interface Image {
+  id: number;
+  url: string;
+  productId: number;
+}
+
+interface Product {
+  id: number;
+  name: string;
+  ratings: number | null;
+  description: string | null;
+  category: string;
+  status: boolean;
+  price: number;
+  images: Image[];
 }
 
 export default function Home() {
-  const [products, setProducts] = useState<Products[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   console.log(products);
   
   
@@ -29,14 +42,13 @@ export default function Home() {
         console.error("Error fetching the products", error);
       }
     };
-
     fetchProducts();
   }, []);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5 gap-5">
       <div className="flex">
-        <Sidebar data={products} />
+        <Sidebar />
         <HPCarousel />
       </div>
       <FlashSales data={products} />

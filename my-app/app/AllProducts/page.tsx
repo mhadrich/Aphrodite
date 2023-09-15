@@ -1,44 +1,51 @@
-'use client'
+"use client";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../Components/ProductCard";
 
-// interface Image {
-//   url: string;
-// }
-
-// interface Product {
-//   name: string;
-//   images: Image[];
-// }
-
-interface Props{
-  dataz:[]
+interface Image {
+  id: number;
+  url: string;
+  productId: number;
 }
 
-function AllProducts(props:Props) {
-  const { dataz } = props;
-  console.log('filtered data',props);
-  
-  // const [products, setProducts] = useState<Product[]>([]);
+interface Product {
+  id: number;
+  name: string;
+  ratings: number | null;
+  description: string | null;
+  category: string;
+  status: boolean;
+  price: number;
+  images: Image[];
+}
 
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const response = await fetch("api/products");
-  //       const data = await response.json();
-  //       setProducts(data);
-  //     } catch (error) {
-  //       console.error("Error fetching the products", error);
-  //     }
-  //   };
+interface Props {
+  data: Product;
+}
 
-  //   fetchProducts();
-  // }, []);
+function AllProducts() {
+  const [products, setProducts] = useState<Product[]>([]);
+  console.log(products);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("api/products");
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching the products", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between px-20">
       <div className="inline-grid grid-cols-4 gap-6">
-        {dataz.map((product) => (
-          <ProductCard data={product} />
+        {products.map((product, productIndex) => (
+          <ProductCard key={productIndex} data={product} />
         ))}
       </div>
     </main>

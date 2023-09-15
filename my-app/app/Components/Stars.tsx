@@ -14,7 +14,7 @@ export default function Stars(props:Props) {
       count={5}
       value={rate}
       edit={false}
-      size={'10px'}
+      size={10}
       color1={"#f1f1f1"}
       color2={"#ffad33"} />
     </div>

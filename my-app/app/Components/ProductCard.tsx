@@ -121,30 +121,34 @@
 
 import Link from "next/link";
 import React from "react";
-import Stars from "./Stars";
 
-interface Props {
-  images: { id: number; url: string; productId: number }[] & {
-    id: number;
-    name: string;
-    ratings: number | null;
-    description: string | null;
-    category: string;
-    status: boolean;
-    price: number;
-  }[];
+interface Image {
+  id: number;
+  url: string;
+  productId: number;
 }
 
-// interface Props {
-//   data:[]
-// }
+interface Product {
+  id: number;
+  name: string;
+  ratings: number | null;
+  description: string | null;
+  category: string;
+  status: boolean;
+  price: number;
+  images: Image[];
+}
 
-const ProductCard =( props: Props) => {
-  const { data:data } = props;
+interface Props {
+  data: Product;
+}
+
+const ProductCard = (props: Props) => {
+  const { data } = props;
 
   return (
     <main>
-      <div className="group w-64 h-64 mb-1 relative bg-neutral-100 rounded border">
+      <div className="group w-64 h-64 mb-1 relative bg-neutral-100 rounded border hover:scale-10 transition ease-in-out delay-150 duration-500">
         {/* RIGHT SIDE ICONS */}
         <div className="left-[218px] top-[8px] absolute flex-col justify-start items-start gap-2 inline-flex">
           {/* FAV */}
@@ -155,7 +159,7 @@ const ProductCard =( props: Props) => {
             viewBox="0 0 24 24"
             strokeWidth={1}
             stroke="currentColor"
-            className="w-6 h-6 hover:stroke-2"
+            className="w-6 h-6 hover:stroke-2 opacity-0 group-hover:opacity-100 transition ease-in-out delay-150 duration-500"
           >
             <path
               strokeLinecap="round"
@@ -170,7 +174,7 @@ const ProductCard =( props: Props) => {
             viewBox="0 0 24 24"
             strokeWidth={1}
             stroke="red"
-            className="w-6 h-6 hover:stroke-2"
+            className="w-6 h-6 hover:stroke-2 opacity-0 group-hover:opacity-100 transition ease-in-out delay-150 duration-500"
           >
             <path
               strokeLinecap="round"
@@ -187,7 +191,7 @@ const ProductCard =( props: Props) => {
               viewBox="0 0 24 24"
               strokeWidth={1}
               stroke="currentColor"
-              className="w-6 h-6 hover:stroke-2"
+              className="w-6 h-6 hover:stroke-2 opacity-0 group-hover:opacity-100 transition ease-in-out delay-150 duration-500"
             >
               <path
                 strokeLinecap="round"
@@ -204,9 +208,9 @@ const ProductCard =( props: Props) => {
           {/* FULL VIEW */}
         </div>
         {/* ADD TO CART */}
-         <div className="absolute">
+        <div className="absolute left-2 top-2 transition duration-700 ease-in-out">
           <svg
-            className=" transition-transform opacity-0 transform ml-4 mt-4 group-hover:scale-150 group-hover:opacity-100"
+            className="w-6 h-6 transition ease-in-out delay-150 duration-500 hover:scale-150 opacity-0 group-hover:opacity-100"
             width="32"
             height="32"
             viewBox="0 0 32 32"
@@ -216,33 +220,33 @@ const ProductCard =( props: Props) => {
             <path
               d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
               stroke="black"
-              stroke-width="1"
+              stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
             <path
               d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z"
               stroke="black"
-              stroke-width="1"
+              stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
             <path
               d="M3 5H7L10 22H26"
               stroke="black"
-              stroke-width="1"
+              stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
             <path
               d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8"
               stroke="black"
-              stroke-width="1"
+              stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
           </svg>
-          </div>
+        </div>
         {/* RIGHT SIDE ICONS */}
         {data && data.images.length > 0 && <img src={data.images[0].url} />}
       </div>
@@ -256,7 +260,7 @@ const ProductCard =( props: Props) => {
         </p>
         {/* PRICE & SALE */}
         {/* STARS */}
-        <Stars rate={data.ratings}/>
+        {/* <Stars rate={data.ratings}/> */}
         {/* STARS */}
       </div>
     </main>
