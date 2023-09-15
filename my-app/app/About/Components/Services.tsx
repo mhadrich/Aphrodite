@@ -6,7 +6,7 @@ export default function Item() {
         <div className="flex-col justify-start items-center gap-6 inline-flex">
           <div className="w-20 h-20 relative">
             <div className="w-20 h-20 left-0 top-0 absolute opacity-30 bg-zinc-800 rounded-full" />
-            <div className="w-14 h-14 left-[11px] top-[11px] absolute bg-black rounded-full group-hover:bg-red-500" />
+            <div className="w-14 h-14 left-[11px] top-[11px] absolute bg-black rounded-full group-hover:bg-red-500 transition ease-in-out delay-150 duration-500" />
             <svg
               className="w-10 h-10 left-[18px] top-[18px] absolute"
               width="41"
@@ -93,7 +93,7 @@ export default function Item() {
         <div className="flex-col justify-start items-center gap-6 inline-flex">
           <div className="w-20 h-20 relative">
             <div className="w-20 h-20 left-0 top-0 absolute opacity-30 bg-zinc-800 rounded-full" />
-            <div className="w-14 h-14 left-[11px] top-[11px] absolute bg-black rounded-full group-hover:bg-red-500" />
+            <div className="w-14 h-14 left-[11px] top-[11px] absolute bg-black rounded-full group-hover:bg-red-500 transition ease-in-out delay-150 duration-500" />
             <svg
               className="w-10 h-10 left-[18px] top-[18px] absolute"
               width="40"
@@ -154,7 +154,7 @@ export default function Item() {
         <div className="flex-col justify-start items-center gap-6 inline-flex">
           <div className="w-20 h-20 relative">
             <div className="w-20 h-20 left-0 top-0 absolute opacity-30 bg-zinc-800 rounded-full" />
-            <div className="w-14 h-14 left-[11px] top-[11px] absolute bg-black rounded-full group-hover:bg-red-500" />
+            <div className="w-14 h-14 left-[11px] top-[11px] absolute bg-black rounded-full group-hover:bg-red-500 transition ease-in-out delay-150 duration-500" />
             <svg
               className="w-10 h-10 left-[19px] top-[19px] absolute"
               width="40"

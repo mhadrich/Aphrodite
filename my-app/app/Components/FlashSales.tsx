@@ -1,8 +1,25 @@
 import ProductCard from "./ProductCard";
 import Stopwatch from "./Stopwatch";
 
-interface Props {
-  data: [];
+interface Image {
+  id: number;
+  url: string;
+  productId: number;
+}
+
+interface Product {
+  id: number;
+  name: string;
+  ratings: number | null;
+  description: string | null;
+  category: string;
+  status: boolean;
+  price: number;
+  images: Image[];
+}
+
+interface Props{
+  data:Product[]
 }
 
 export default function Sidebar(props: Props) {
