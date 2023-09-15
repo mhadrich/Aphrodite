@@ -14,62 +14,62 @@ export default function Categories() {
       </p>
       <div className="justify-start items-start gap-12 inline-flex">
         {/*makeup  cart*/}
-        <Link href="/AllProducts" className="group">
-          <div className="px-14 py-6 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500">
+        <Link href="/AllProducts/Makeup" className="group">
+          <div className="px-14 py-6 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500 transition ease-in-out delay-150 duration-500">
             <img
-              className="w-16 h-16 group-hover:invert"
+              className="w-16 h-16 group-hover:invert transition ease-in-out delay-150 duration-500"
               src="https://cdn4.iconfinder.com/data/icons/beauty-hand-drawn/38/beauty_hand_drawn_icon_illustration_-12-512.png"
-              alt=""
+              alt="Makeup"
             />
-            <p className="text-black group-hover:text-white">Makeup</p>
+            <p className="text-black group-hover:text-white transition ease-in-out delay-150 duration-500">Makeup</p>
           </div>
         </Link>
         {/*makeup cart */}
         {/*SkinCare Cart*/}
-        <Link href="/AllProducts" className="group">
-          <div className="px-12 py-8 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500">
+        <Link href="/AllProducts/Skin Care" className="group">
+          <div className="px-12 py-8 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500 transition ease-in-out delay-150 duration-500">
             <img
-              className="w-16 h-16 group-hover:invert"
+              className="w-16 h-16 group-hover:invert transition ease-in-out delay-150 duration-500"
               src="https://cdn4.iconfinder.com/data/icons/beauty-hand-drawn/40/beauty_hand_drawn_icon_illustration_-14-512.png"
-              alt=""
+              alt="Skin Care"
             />
-            <p className="text-black group-hover:text-white">Skin Care</p>
+            <p className="text-black group-hover:text-white transition ease-in-out delay-150 duration-500">Skin Care</p>
           </div>
         </Link>
         {/*SkinCare Cart*/}
         {/*haircare Cart*/}
-        <Link href="/AllProducts" className="group">
-          <div className="px-14 py-8 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500">
+        <Link href="/AllProducts/Hair Care" className="group">
+          <div className="px-12 py-8 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500 transition ease-in-out delay-150 duration-500">
             <img
-              className="w-16 h-16 group-hover:invert"
+              className="w-16 h-16 group-hover:invert transition ease-in-out delay-150 duration-500"
               src="https://cdn4.iconfinder.com/data/icons/beauty-hand-drawn/43/beauty_hand_drawn_icon_illustration_-13-512.png"
-              alt=""
+              alt="Hair Care"
             />
-            <p className="text-black group-hover:text-white">HairCare</p>
+            <p className="text-black group-hover:text-white transition ease-in-out delay-150 duration-500">Hair Care</p>
           </div>
         </Link>
         {/*haircare Cart*/}
         {/*hygiene Cart*/}
-        <Link href="/AllProducts" className="group">
-          <div className="px-14 py-8 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500">
+        <Link href="/AllProducts/Hygiene" className="group">
+          <div className="px-14 py-8 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500 transition ease-in-out delay-150 duration-500">
             <img
-              className="w-16 h-16 group-hover:invert"
+              className="w-16 h-16 group-hover:invert transition ease-in-out delay-150 duration-500"
               src="https://cdn4.iconfinder.com/data/icons/beauty-hand-drawn/42/beauty_hand_drawn_icon_illustration_-15-512.png"
-              alt=""
+              alt="Hygiene"
             />
-            <p className="text-black group-hover:text-white">Hygiene</p>
+            <p className="text-black group-hover:text-white transition ease-in-out delay-150 duration-500">Hygiene</p>
           </div>
         </Link>
         {/*hygiene Cart*/}
         {/*parfume Cart*/}
-        <Link href="/AllProducts" className="group">
-          <div className="px-12 py-8 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500">
+        <Link href="/AllProducts/Perfume" className="group">
+          <div className="px-12 py-8 w-44 h-36 rounded border border-black border-opacity-30  group-hover:bg-red-500 transition ease-in-out delay-150 duration-500">
             <img
-              className="w-16 h-16 group-hover:invert"
+              className="w-16 h-16 group-hover:invert transition ease-in-out delay-150 duration-500"
               src="https://cdn4.iconfinder.com/data/icons/beauty-hand-drawn/37/beauty_hand_drawn_icon_illustration_-22-512.png"
-              alt=""
+              alt="Perfume"
             />
-            <p className="text-black group-hover:text-white">Perfumes</p>
+            <p className="text-black group-hover:text-white transition ease-in-out delay-150 duration-500">Perfume</p>
           </div>
         </Link>
         {/*parfume Cart*/}

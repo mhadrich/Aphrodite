@@ -22,7 +22,7 @@ export default function OurStory() {
           </div>
         </div>
         <img
-          className="w-96 h-96"
+          className="w-[800px] h-96"
           src="https://fian-indonesia.org/wp-content/uploads/2020/01/makeup-banner-kit.jpg"
         />
       </div>

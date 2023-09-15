@@ -3,21 +3,27 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface Image {
+  id: number;
   url: string;
+  productId: number;
 }
 
 interface Product {
   id: number;
   name: string;
+  ratings: number | null;
+  description: string | null;
+  category: string;
+  status: boolean;
   price: number;
   images: Image[];
 }
 
-interface ProductCardProps {
+interface Props {
   data: Product;
 }
 
-export default function ProdDetailMain(props) {
+export default function ProdDetailMain(props:Props) {
   const { data } = props;
   const [counter, setCounter] = useState(0);
   const [big, setBig] = useState(data.images[0].url);
@@ -45,7 +51,7 @@ export default function ProdDetailMain(props) {
         {/* LEFT IMAGES */}
         <div className="w-28 h-96 flex flex-col gap-5">
           {data.images &&
-            data.images.map((image: string) => {
+            data.images.map((image) => {
               console.log('the images',image);
               return (
                 <div>
@@ -73,7 +79,7 @@ export default function ProdDetailMain(props) {
             </p>
             {availability}
             <p className="text-black text-2xl font-normal leading-normal tracking-wide pb-4">
-              {data && data.price}
+              ${data && data.price}
             </p>
 
             <p className="w-96 text-black text-sm font-normal leading-tight pb-4">

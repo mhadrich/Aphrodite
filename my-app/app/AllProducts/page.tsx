@@ -3,16 +3,29 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../Components/ProductCard";
 
 interface Image {
+  id: number;
   url: string;
+  productId: number;
 }
 
 interface Product {
+  id: number;
   name: string;
+  ratings: number | null;
+  description: string | null;
+  category: string;
+  status: boolean;
+  price: number;
   images: Image[];
+}
+
+interface Props {
+  data: Product;
 }
 
 function AllProducts() {
   const [products, setProducts] = useState<Product[]>([]);
+  console.log(products);
 
   useEffect(() => {
     const fetchProducts = async () => {

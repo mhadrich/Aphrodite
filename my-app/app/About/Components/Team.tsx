@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Team() {
   return (
-    <main>
-      <div className="w-screen p-24 h-96 justify-start items-start gap-5 inline-flex">
+    <main className="mb-20 mt-20">
+      <div className="w-screen px-52 h-96 justify-start items-start gap-5 inline-flex">
         {/* AHLEM */}
         <div className="w-96 h-96 flex-col justify-start items-start gap-2 inline-flexq">
           <img src="https://media.licdn.com/dms/image/D5603AQGh2swep-WeEw/profile-displayphoto-shrink_800_800/0/1679521802821?e=2147483647&v=beta&t=yNaDyr9jfb7RurvSs0Dlb47sFeJu56G8i4qCxsGPlDs" />
