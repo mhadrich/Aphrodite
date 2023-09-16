@@ -10,10 +10,27 @@ import ThisMonth from "./Components/ThisMonth";
 import OurProducts from "./Components/OurProducts";
 import NewArrival from "./Components/NewArrival";
 
-export default function Home() {
+interface Image {
+  id: number;
+  url: string;
+  productId: number;
+}
 
-  const [products, setProducts] = useState<products[]>([]);
+interface Product {
+  id: number;
+  name: string;
+  ratings: number | null;
+  description: string | null;
+  category: string;
+  status: boolean;
+  price: number;
+  images: Image[];
+}
+
+export default function Home() {
+  const [products, setProducts] = useState<Product[]>([]);
   console.log(products);
+  
   
   useEffect(() => {
     const fetchProducts = async () => {
@@ -25,7 +42,6 @@ export default function Home() {
         console.error("Error fetching the products", error);
       }
     };
-
     fetchProducts();
   }, []);
 
