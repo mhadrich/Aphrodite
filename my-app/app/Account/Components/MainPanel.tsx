@@ -182,7 +182,6 @@ export default function MainPanel() {
                 First Name
               </p>
               <input
-                placeholder="Malek"
                 className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -193,7 +192,6 @@ export default function MainPanel() {
                 Last Name
               </p>
               <input
-                placeholder="Hadrich"
                 className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
@@ -206,7 +204,6 @@ export default function MainPanel() {
                 Email
               </p>
               <input
-                placeholder="mhadrich@gmail.com"
                 type="email"
                 className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
                 value={email}
@@ -218,7 +215,7 @@ export default function MainPanel() {
                 Address
               </p>
               <input
-                placeholder="34 Chem's Street"
+              
                 className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
