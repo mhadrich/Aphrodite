@@ -24,13 +24,14 @@ export default function SignIn() {
         },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         setMessage("Login successful!");
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("token", data.token); 
   
+        // Fetch user data
         try {
           const userResponse = await fetch("/api/user/me", {
             method: "GET",
@@ -41,13 +42,12 @@ export default function SignIn() {
           });
           const userData = await userResponse.json();
   
-          // console.log("User data:", userData);
+          console.log('User data:', userData);  // Log the user data. You can set it in state or context as per your needs
         } catch (error) {
           console.error("Failed to fetch user data:", error);
         }
   
-        await router.push("/");  
-        window.location.href='/';
+        router.push("/");
       } else {
         setMessage(data.message || "Login failed.");
       }
