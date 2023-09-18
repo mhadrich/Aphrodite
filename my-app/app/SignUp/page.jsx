@@ -8,7 +8,11 @@ function SignUp() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
+
+    lastName: "", 
+
     lastName: "",
+
     email: "",
     password: "",
     passwordConfirm: "",
