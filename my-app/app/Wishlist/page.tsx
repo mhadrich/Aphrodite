@@ -9,15 +9,33 @@
 //     </main>
 //   );
 // }
-
+ 
 
 
 
 "use client"
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../Components/ProductCard';
-import { getProductById } from '../api/products/route';
-import { Product } from '@prisma/client';
+import{ GET} from '../api/whishlist/route'; // Import the API route function
+// import { Product } from '@prisma/client';
+
+// Update the Product type definition
+interface image {
+  id : number;
+  url : string;
+  productId : number
+}
+
+interface Product {
+  id: number;
+  name: string;
+  ratings: number | null;
+  description: string | null;
+  category: string;
+  status: boolean;
+  price: number;
+  images: image[]; // Add the images property
+}
 
 export default function Wishlist() {
   const [favorites, setFavorites] = useState<Product[]>([]);
@@ -38,17 +56,24 @@ export default function Wishlist() {
 
   useEffect(() => {
     setLoading(true);
-    const productId = 1; 
-    getProductById(productId)
-      .then((product) => {
-        addToFavorites(product);
+
+    // Fetch data from the API route using the fetch function
+    fetch("/api/wishlist/route")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse the response body as JSON
+      })
+      .then((data) => {
+        setFavorites(data); // Set the fetched favorite items in state
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching product:', error);
+        console.error('Error fetching data:', error);
         setLoading(false);
       });
-  },  [1]); 
+  }, []); 
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pl-5 pr-5">
@@ -57,20 +82,20 @@ export default function Wishlist() {
         <p>Loading...</p>
       ) : (
         <div className="flex flex-wrap justify-center gap-4">
-          {favorites.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              isFavorite={favorites.some((favProduct) => favProduct.id === product.id)}
-              onToggleFavorite={() => {
-                if (favorites.some((favProduct) => favProduct.id === product.id)) {
-                  removeFromFavorites(product);
-                } else {
-                  addToFavorites(product);
-                }
-              }}
-            />
-          ))}
+         {favorites.map((product) => (
+  <ProductCard
+    key={product.id}
+    product={product} 
+    isFavorite={favorites.some((favProduct) => favProduct.id === product.id)}
+    onToggleFavorite={() => {
+      if (favorites.some((favProduct) => favProduct.id === product.id)) {
+        removeFromFavorites(product);
+      } else {
+        addToFavorites(product);
+      }
+    }}
+  />
+))}
         </div>
       )}
       <div className="mt-4">
