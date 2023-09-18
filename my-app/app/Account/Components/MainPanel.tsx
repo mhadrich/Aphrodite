@@ -215,6 +215,7 @@ export default function MainPanel() {
                 Address
               </p>
               <input
+              
                 className="pl-4 w-80 h-12 left-0 top-0 relative bg-neutral-100 rounded"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
