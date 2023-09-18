@@ -144,7 +144,9 @@ interface Props {
 }
 
 const ProductCard = (props: Props) => {
-  const { data } = props;
+  const { data} = props;
+
+  
 
   return (
     <main>
@@ -249,6 +251,7 @@ const ProductCard = (props: Props) => {
         </div>
         {/* RIGHT SIDE ICONS */}
         {data && data.images.length > 0 && <img src={data.images[0].url} />}
+      
       </div>
       <div className="flex-col justify-start items-start gap flex">
         <p className="text-black w-64 text-base font-medium leading-normal">
