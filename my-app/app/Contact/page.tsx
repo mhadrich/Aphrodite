@@ -11,12 +11,12 @@ export default function Contact() {
     message: "",
   });
 
-  const handleChange = (event) => {
+  const handleChange = (event:any) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
       const response = await emailjs.sendForm(
