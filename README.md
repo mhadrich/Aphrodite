@@ -1,6 +1,6 @@
 # Aphrodite
 
-An e-commerce application for beauty products. Built with Next 13
+Aphrodite is an elegantly crafted e-commerce web application that caters to the discerning needs of beauty enthusiasts. Specializing in a curated selection of premium beauty products, Aphrodite brings together a seamless shopping experience with the latest in web technology. Built on the robust foundations of Next.js, TypeScript, and Tailwind CSS, Aphrodite combines cutting-edge development practices with an aesthetic appeal, reflecting the essence of the beauty industry it serves.
 
 *This project was part of certification at RBK*
 
