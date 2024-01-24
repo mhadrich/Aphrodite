@@ -21,10 +21,6 @@ An e-commerce application for beauty products. Built with Next 13
 * **Ghazi Bentini** - *Back End* - [ghazibentini](https://github.com/ghazibentini)
 * **Aouini Oumaima** - *Miscellaneous* - [aouini-oumaima](https://github.com/aouini-oumaima)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
 * Hat tip to anyone whose code was used
