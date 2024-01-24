@@ -1,6 +1,7 @@
 # Aphrodite
 
 An e-commerce application for beauty products. Built with Next 13
+*This project was part of certification at RBK*
 
 ## Getting Started
 
@@ -52,15 +53,15 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Next.js 13](https://nextjs.org/blog/next-13) - The web framework used
+* [TypeScript](https://www.typescriptlang.org/) - Programming Language
+* [Prisma](https://www.prisma.io/) - Node.js and TypeScript ORM
+* [Bcryptjs](https://www.npmjs.com/package/bcryptjs) - Password Encryption
+* [Cloudinary](https://cloudinary.com/) - Media management
+* [EmailJS](https://www.emailjs.com/) - Mail response system
+* [Tailwind](https://tailwindcss.com/) - CSS Framework
 
 ## Contributing
 
@@ -72,9 +73,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Selmi Ahlem** - *Scrum Master* - [Selmi-Ahlem](https://github.com/Selmi-Ahlem)
+* **Malek Hadrich** - *Front End* - [mhadrich](https://github.com/mhadrich)
+* **Ghazi Bentini** - *Back End* - [ghazibentini](https://github.com/ghazibentini)
+* **Aouini Oumaima** - *Miscellaneous* - [aouini-oumaima](https://github.com/aouini-oumaima)
 
 ## License
 
